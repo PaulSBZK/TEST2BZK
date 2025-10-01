@@ -9,6 +9,7 @@ permissions:
   contents: write
 jobs:
 <<<<<<< HEAD
+<<<<<<< HEAD
   main:
     name: Snapshot
     runs-on: ubuntu-22.04
@@ -76,6 +77,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 =======
+=======
+>>>>>>> parent of a20376c (Update build.yml)
   build:
     name: Build
     uses: Logius-standaarden/Automatisering/.github/workflows/build.yml@snapshot-in-repo
@@ -88,4 +91,7 @@ jobs:
 #    name: Publish (Logius)
 #    uses: Logius-standaarden/Automatisering/.github/workflows/publish.yml@main
 #    secrets: inherit
+<<<<<<< HEAD
+>>>>>>> parent of a20376c (Update build.yml)
+=======
 >>>>>>> parent of a20376c (Update build.yml)
