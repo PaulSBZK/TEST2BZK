@@ -1,9 +1,14 @@
-name: Build
-# on:
-#  workflow_call:
+name: Build and Check
 on:
   workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
 jobs:
+<<<<<<< HEAD
   main:
     name: Snapshot
     runs-on: ubuntu-22.04
@@ -70,3 +75,17 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+=======
+  build:
+    name: Build
+    uses: Logius-standaarden/Automatisering/.github/workflows/build.yml@snapshot-in-repo
+  check:
+    needs: build
+    name: Check
+    uses: Logius-standaarden/Automatisering/.github/workflows/check.yml@main    
+#  publish:
+#    needs: build
+#    name: Publish (Logius)
+#    uses: Logius-standaarden/Automatisering/.github/workflows/publish.yml@main
+#    secrets: inherit
+>>>>>>> parent of a20376c (Update build.yml)
