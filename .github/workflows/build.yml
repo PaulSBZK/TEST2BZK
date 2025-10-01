@@ -56,7 +56,7 @@ jobs:
          python3 -m http.server 8080 &
          wget https://raw.githubusercontent.com/Logius-standaarden/Automatisering/main/scripts/pdf.js
          rm -f *.pdf
-         node pdf.js      
+         node pdf.js || true      
          find *.pdf
          mv *.pdf ~/static/
       - name: Kopieer gegenereerde bestanden naar repository-map
